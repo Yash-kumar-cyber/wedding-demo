@@ -69,7 +69,7 @@ export default function WeddingPage() {
   const [farewellLanterns, setFarewellLanterns] = useState<Array<any>>([]);
 
   // Target Wedding Date: 20 November 2026 18:30 IST
-  const targetDate = new Date("2026-11-20T18:30:00+05:30").getTime();
+  const targetDate = new Date("2026-12-02T12:00:00+05:30").getTime();
 
   // Lock body scroll while envelope is active
   useEffect(() => {
@@ -534,15 +534,15 @@ export default function WeddingPage() {
           <p className="hero__kicker">Together with our families</p>
 
           <h1 className="hero__names">
-            <span className="hero__name">Anuj</span>
+            <span className="hero__name">Alankrita Tripathi</span>
             <span className="hero__amp">&amp;</span>
-            <span className="hero__name">Priya</span>
+            <span className="hero__name">Hemant Sharma</span>
           </h1>
 
           <div className="hero__rule"></div>
 
           <p className="hero__blessing">
-            <span className="gold-text shimmer">Friday, 20 November 2026</span>
+            <span className="gold-text shimmer">Wednesday, 2 December 2026</span>
           </p>
 
           <div
@@ -614,15 +614,15 @@ export default function WeddingPage() {
 
             <h2 className="invite__names" id="invite-names">
               <span className="invite__person">
-                <span className="invite__name">Anuj</span>
-                <span className="invite__family">Son of Mr. &amp; Mrs. Sharma</span>
+                <span className="invite__name">Alankrita Tripathi</span>
+                <span className="invite__family">Daughter of Mrs. Anjana Tripathi &amp; Mr. Ajay Tripathi</span>
               </span>
               <span className="invite__amp" aria-hidden="true">
                 &amp;
               </span>
               <span className="invite__person">
-                <span className="invite__name">Priya</span>
-                <span className="invite__family">Daughter of Mr. &amp; Mrs. Verma</span>
+                <span className="invite__name">Hemant Sharma</span>
+                <span className="invite__family">Son of Mrs. Anuja Sharma &amp; Mr. Sanjay Sharma</span>
               </span>
             </h2>
 
@@ -638,13 +638,13 @@ export default function WeddingPage() {
 
             <div className="invite__meta">
               <p className="invite__date">
-                20<sup>th</sup> November 2026
+                2<sup>nd</sup> December 2026
               </p>
-              <p className="invite__time">6:30 PM Onwards</p>
-              <p className="invite__venue">Radhika Mandapam, Gwalior Road, Jhansi</p>
+              <p className="invite__time">12:00 PM Onwards</p>
+              <p className="invite__venue">Indralok Marriage Garden, Termiinal 2, jagatpura road, near airport Jaipur</p>
               <a
                 className="map-link"
-                href="https://www.google.com/maps/search/?api=1&query=Radhika+mandapam%2C+gwalior+road%2C+Jhansi"
+                href="https://maps.app.goo.gl/amVNorJKCCNc2epL7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -748,86 +748,8 @@ export default function WeddingPage() {
           </div>
 
           <div className="events" role="list" aria-label="Wedding events">
-            {/* 1. Mehendi */}
+            {/* 1. Sangeet */}
             <article className="event event--left" role="listitem" aria-label="1 of 5: Mehendi">
-              <div className="event__stage">
-                <div className="event__panel">
-                  <div className="event__frame" aria-hidden="true"></div>
-                  <div className="event__body">
-                    <img
-                      className="event__art"
-                      src="/images/template-2/event-mehendi.webp"
-                      alt="Mehendi"
-                      loading="lazy"
-                    />
-                    <h3 className="event__name">Mehendi</h3>
-                    <div className="event__rule" aria-hidden="true"></div>
-                    <p className="event__when">
-                      <span className="event__date">
-                        18<sup className="event__ord">th</sup> Nov 2026
-                      </span>
-                      <span className="event__time">4:00 PM</span>
-                    </p>
-                    <p className="event__venue">Lotus Courtyard</p>
-                    <p className="event__note">Greens &amp; florals encouraged</p>
-                    <a
-                      className="map-link"
-                      href="https://www.google.com/maps/search/?api=1&query=Radhika+mandapam%2C+gwalior+road%2C+Jhansi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
-                      View on map
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            {/* 2. Haldi */}
-            <article className="event event--right" role="listitem" aria-label="2 of 5: Haldi">
-              <div className="event__stage">
-                <div className="event__panel">
-                  <div className="event__frame" aria-hidden="true"></div>
-                  <div className="event__body">
-                    <img
-                      className="event__art"
-                      src="/images/template-2/event-haldi.webp"
-                      alt="Haldi"
-                      loading="lazy"
-                    />
-                    <h3 className="event__name">Haldi</h3>
-                    <div className="event__rule" aria-hidden="true"></div>
-                    <p className="event__when">
-                      <span className="event__date">
-                        19<sup className="event__ord">th</sup> Nov 2026
-                      </span>
-                      <span className="event__time">10:00 AM</span>
-                    </p>
-                    <p className="event__venue">Poolside Courtyard</p>
-                    <p className="event__note">Yellow &amp; ivory tones</p>
-                    <a
-                      className="map-link"
-                      href="https://www.google.com/maps/search/?api=1&query=Radhika+mandapam%2C+gwalior+road%2C+Jhansi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
-                      View on map
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            {/* 3. Sangeet */}
-            <article className="event event--left" role="listitem" aria-label="3 of 5: Sangeet">
               <div className="event__stage">
                 <div className="event__panel">
                   <div className="event__frame" aria-hidden="true"></div>
@@ -842,15 +764,54 @@ export default function WeddingPage() {
                     <div className="event__rule" aria-hidden="true"></div>
                     <p className="event__when">
                       <span className="event__date">
-                        19<sup className="event__ord">th</sup> Nov 2026
+                        22<sup className="event__ord">nd</sup> Nov 2026
                       </span>
-                      <span className="event__time">7:30 PM</span>
+                      <span className="event__time">4:00 PM</span>
                     </p>
-                    <p className="event__venue">Royal Ballroom</p>
-                    <p className="event__note">An evening of music and dance</p>
+                    <p className="event__venue">Crown Palace</p>
+                    <p className="event__note">Jawahar nagar, Kanpur</p>
                     <a
                       className="map-link"
-                      href="https://www.google.com/maps/search/?api=1&query=Radhika+mandapam%2C+gwalior+road%2C+Jhansi"
+                      href="https://maps.app.goo.gl/Nai6x9ZcXzfoxVcp6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                      View on map
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* 2. Sagai */}
+            <article className="event event--right" role="listitem" aria-label="2 of 5: Sagai">
+              <div className="event__stage">
+                <div className="event__panel">
+                  <div className="event__frame" aria-hidden="true"></div>
+                  <div className="event__body">
+                    <img
+                      className="event__art"
+                      src="/images/template-2/event-shaadi.webp"
+                      alt="Haldi"
+                      loading="lazy"
+                    />
+                    <h3 className="event__name">Sagai</h3>
+                    <div className="event__rule" aria-hidden="true"></div>
+                    <p className="event__when">
+                      <span className="event__date">
+                        1<sup className="event__ord">st</sup> Dec 2026
+                      </span>
+                      <span className="event__time">3:00 AM</span>
+                    </p>
+                    <p className="event__venue">Hotel Nesta</p>
+                    <p className="event__note">Sector-8,9, Pratap nagar, Jaipur</p>
+                    <a
+                      className="map-link"
+                      href="https://maps.app.goo.gl/tdi9VCQHLffXKhox7"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -866,7 +827,7 @@ export default function WeddingPage() {
             </article>
 
             {/* 4. Shaadi */}
-            <article className="event event--right" role="listitem" aria-label="4 of 5: Shaadi">
+            <article className="event event--left" role="listitem" aria-label="4 of 5: Shaadi">
               <div className="event__stage">
                 <div className="event__panel">
                   <div className="event__frame" aria-hidden="true"></div>
@@ -881,15 +842,15 @@ export default function WeddingPage() {
                     <div className="event__rule" aria-hidden="true"></div>
                     <p className="event__when">
                       <span className="event__date">
-                        20<sup className="event__ord">th</sup> Nov 2026
+                        2<sup className="event__ord">nd</sup> Dec 2026
                       </span>
-                      <span className="event__time">6:30 PM</span>
+                      <span className="event__time">12:00 PM</span>
                     </p>
-                    <p className="event__venue">Garden Mandap</p>
-                    <p className="event__note">Festive Indian — pastels, ivory &amp; gold</p>
+                    <p className="event__venue">Indralok Marriage Garden</p>
+                    <p className="event__note">Terminal 2, Jagatpura road, near airport Jaipur</p>
                     <a
                       className="map-link"
-                      href="https://www.google.com/maps/search/?api=1&query=Radhika+mandapam%2C+gwalior+road%2C+Jhansi"
+                      href="https://maps.app.goo.gl/amVNorJKCCNc2epL7"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -905,7 +866,7 @@ export default function WeddingPage() {
             </article>
 
             {/* 5. Reception */}
-            <article className="event event--left" role="listitem" aria-label="5 of 5: Reception">
+            <article className="event event--right" role="listitem" aria-label="5 of 5: Reception">
               <div className="event__stage">
                 <div className="event__panel">
                   <div className="event__frame" aria-hidden="true"></div>
@@ -920,15 +881,15 @@ export default function WeddingPage() {
                     <div className="event__rule" aria-hidden="true"></div>
                     <p className="event__when">
                       <span className="event__date">
-                        21<sup className="event__ord">st</sup> Nov 2026
+                        2<sup className="event__ord">nd</sup> Dec 2026
                       </span>
-                      <span className="event__time">7:30 PM</span>
+                      <span className="event__time">6:00 PM</span>
                     </p>
-                    <p className="event__venue">Palace Lawns</p>
-                    <p className="event__note">Candlelit dinner and celebration</p>
+                    <p className="event__venue">Indralok Marriage Garden</p>
+                    <p className="event__note">Terminal 2, Jagatpura road, near airport Jaipur</p>
                     <a
                       className="map-link"
-                      href="https://www.google.com/maps/search/?api=1&query=Radhika+mandapam%2C+gwalior+road%2C+Jhansi"
+                      href="https://maps.app.goo.gl/amVNorJKCCNc2epL7"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -1222,7 +1183,7 @@ export default function WeddingPage() {
                         ? "Sending RSVP..."
                         : "Sending your note..."
                       : attending
-                        ? "Send RSVP"
+                        ? "Please Respond"
                         : "Send my regrets"}
                   </span>
                 </button>
@@ -1447,14 +1408,14 @@ export default function WeddingPage() {
             <p className="farewell__signoff">
               With all our love
               <br />
-              Anuj &amp; Priya
+              Alankrita Tripathi &amp; Hemant Sharma
               <br />
               <span className="farewell__families">&amp; Our Families</span>
             </p>
             <p className="farewell__date">
-              Friday, 20 November 2026
+              2nd December 2026
               <br />
-              Radhika Mandapam, Gwalior Road, Jhansi
+              Indrlok Marriage Garden, Terminal 2, jagatpura Road, near Airport Jaipur
             </p>
 
             <p className="farewell__made">
