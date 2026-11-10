@@ -622,7 +622,7 @@ export default function WeddingPage() {
               </span>
               <span className="invite__person">
                 <span className="invite__name">Hemant Sharma</span>
-                <span className="invite__family">Son of Mrs. Anuja Sharma &amp; Mr. Sanjay Sharma</span>
+                <span className="invite__family">Son of Mrs. Alankritaa Sharma &amp; Mr. Sanjay Sharma</span>
               </span>
             </h2>
 

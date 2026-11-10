@@ -2,15 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://anujwedspriya.com"),
-  title: "Anuj & Priya — Wedding Celebration | 20 November",
+  metadataBase: new URL("https://AlankritawedsHemant.com"),
+  title: "Alankrita & Hemant — Wedding Celebration | 20 November",
   description:
-    "We request the honour of your presence at the wedding celebration of Anuj & Priya on 20 November at Radhika Mandapam, Gwalior Road, Jhansi.",
-  authors: [{ name: "Anuj & Priya" }],
+    "We request the honour of your presence at the wedding celebration of Alankrita & Hemant on 20 November at Radhika Mandapam, Gwalior Road, Jhansi.",
+  authors: [{ name: "Alankrita & Hemant" }],
   openGraph: {
-    title: "Anuj & Priya — Wedding Invitation",
+    title: "Alankrita & Hemant — Wedding Invitation",
     description:
-      "Join us in celebrating the wedding of Anuj & Priya on 20 November at Radhika Mandapam, Gwalior Road, Jhansi.",
+      "Join us in celebrating the wedding of Alankrita & Hemant on 20 November at Radhika Mandapam, Gwalior Road, Jhansi.",
     images: ["/images/template-2/hero-palace.jpg"],
   },
 };
