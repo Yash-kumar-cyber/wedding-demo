@@ -3,14 +3,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://AlankritawedsHemant.com"),
-  title: "Alankrita & Hemant — Wedding Celebration | 20 November",
+  title: "Alankrita & Hemant — Wedding Celebration | 2 December 2026",
   description:
-    "We request the honour of your presence at the wedding celebration of Alankrita & Hemant on 20 November at Radhika Mandapam, Gwalior Road, Jhansi.",
+    "We request the honour of your presence at the wedding celebration of Alankrita & Hemant on 2 December 2026 at Indralok Marriage Garden, Terminal 2, Jagatpura Road, Near Airport, Jaipur.",
   authors: [{ name: "Alankrita & Hemant" }],
   openGraph: {
     title: "Alankrita & Hemant — Wedding Invitation",
     description:
-      "Join us in celebrating the wedding of Alankrita & Hemant on 20 November at Radhika Mandapam, Gwalior Road, Jhansi.",
+      "Join us in celebrating the wedding of Alankrita & Hemant on 2 December 2026 at Indralok Marriage Garden, Terminal 2, Jagatpura Road, Near Airport, Jaipur.",
     images: ["/images/template-2/hero-palace.jpg"],
   },
 };

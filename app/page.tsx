@@ -353,7 +353,7 @@ export default function WeddingPage() {
   };
 
   return (
-    <main className="page">
+    <main className="page relative w-full overflow-x-hidden min-h-screen bg-ivory text-foreground font-sans selection:bg-gold/30">
       {/* Background Music */}
       <audio
         ref={audioRef}
@@ -366,19 +366,20 @@ export default function WeddingPage() {
 
       {/* Floating Music Toggle */}
       <button
-        className={`music-toggle ${!isPlayingMusic ? "is-muted" : ""}`}
+        className={`music-toggle fixed right-5 bottom-6 sm:right-7 sm:bottom-7 z-40 grid place-items-center w-12 h-12 rounded-full border border-gold/60 bg-ivory/80 backdrop-blur-md shadow-plate text-gold-deep transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer ${!isPlayingMusic ? "is-muted text-primary/50" : ""
+          }`}
         onClick={toggleMusic}
         type="button"
         aria-pressed={isPlayingMusic}
         aria-label={isPlayingMusic ? "Turn music off" : "Turn music on"}
       >
         <span className="music-toggle__ring" aria-hidden="true"></span>
-        <svg className="icon music-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <svg className="icon music-toggle__icon w-5 h-5 relative z-10" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M9 18V5l12-2v13" />
           <circle cx="6" cy="18" r="3" />
           <circle cx="18" cy="16" r="3" />
         </svg>
-        <svg className="icon music-toggle__slash" viewBox="0 0 24 24" aria-hidden="true">
+        <svg className="icon music-toggle__slash w-5 h-5 absolute z-10 transition-opacity duration-200" viewBox="0 0 24 24" aria-hidden="true">
           <line x1="3" y1="3" x2="21" y2="21" />
         </svg>
       </button>
@@ -430,23 +431,24 @@ export default function WeddingPage() {
       {/* =====================================================================
           2. Hero Section: Sandstone Palace at Dawn, Lanterns, Petals
           ===================================================================== */}
-      <section className="hero">
-        <div className="hero__bg" data-parallax="bg">
+      <section className="hero relative w-full h-[100svh] min-h-[620px] overflow-hidden">
+        <div className="hero__bg absolute inset-0 scale-[1.08]" data-parallax="bg">
           <img
             src="/images/template-2/hero-palace.jpg"
             width={1024}
             height={1536}
             alt="Watercolour illustration of a sandstone palace beneath a blush dawn sky"
+            className="w-full h-full object-cover object-bottom"
           />
         </div>
-        <div className="hero__wash" aria-hidden="true"></div>
+        <div className="hero__wash absolute inset-0" aria-hidden="true"></div>
 
         {/* Floating Lanterns */}
-        <div className="lanterns" aria-hidden="true">
+        <div className="lanterns absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           {heroLanterns.map((l, idx) => (
             <span
               key={idx}
-              className="lantern"
+              className="lantern absolute"
               style={{
                 left: `${l.left}%`,
                 bottom: `${l.bottom}%`,
@@ -463,17 +465,18 @@ export default function WeddingPage() {
                 width={l.width}
                 height={l.height}
                 loading="lazy"
+                className="w-full"
               />
             </span>
           ))}
         </div>
 
         {/* Falling Petals */}
-        <div className="petals" aria-hidden="true">
+        <div className="petals absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           {heroPetals.map((p, idx) => (
             <span
               key={idx}
-              className="petal"
+              className="petal absolute -top-[6%]"
               style={{
                 left: `${p.left}%`,
                 width: `${p.width}px`,
@@ -484,19 +487,19 @@ export default function WeddingPage() {
                 ["--delay" as any]: `${p.delay}s`,
               }}
             >
-              <span></span>
+              <span className="block w-full h-full"></span>
             </span>
           ))}
         </div>
 
         {/* Ambient Haze Bands */}
-        <div className="haze" aria-hidden="true">
+        <div className="haze absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <span></span>
           <span></span>
         </div>
 
         {/* Drifting Birds Crossing Sky */}
-        <div className="birds" aria-hidden="true">
+        <div className="birds absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <svg viewBox="0 0 24 8">
             <path d="M1 5C4 1 7 1 10 5M14 5c3-4 6-4 9 0" />
           </svg>
@@ -529,55 +532,63 @@ export default function WeddingPage() {
         />
 
         {/* Hero Content */}
-        <div className="hero__content" data-parallax="content">
+        <div className="hero__content relative z-10 flex h-full flex-col items-center pt-[13svh] px-6 text-center" data-parallax="content">
           <span className="hero__invocation" role="img" aria-label="Shri Ganeshaya Namah"></span>
-          <p className="hero__kicker">Together with our families</p>
-
-          <h1 className="hero__names">
-            <span className="hero__name">Alankrita Tripathi</span>
-            <span className="hero__amp">&amp;</span>
-            <span className="hero__name">Hemant Sharma</span>
-          </h1>
-
-          <div className="hero__rule"></div>
-
-          <p className="hero__blessing">
-            <span className="gold-text shimmer">Wednesday, 2 December 2026</span>
+          <p className="hero__kicker font-sans uppercase tracking-[0.26em] sm:tracking-[0.5em] text-[clamp(0.56rem,2.6vw,0.75rem)] text-primary/70 whitespace-nowrap">
+            Together with our families
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "0.75rem",
-              marginTop: "2.25rem",
-              flexWrap: "wrap",
-              justifyContent: "center",
+          <h1 className="hero__names flex flex-col items-center mt-6 font-display font-normal text-primary text-[3rem] sm:text-[3.75rem] md:text-[4.5rem] leading-[0.95]">
+            <span className="hero__name">Alankrita</span>
+            <span className="hero__amp my-[0.1em] font-script italic font-semibold text-[0.62em] text-rose">weds</span>
+            <span className="hero__name">Hemant</span>
+          </h1>
+
+          <div className="hero__rule w-40 h-[1px] mt-6"></div>
+
+          <p className="hero__blessing mt-5 font-bold uppercase tracking-[0.18em] sm:tracking-[0.26em] text-[clamp(0.78rem,3.6vw,1.05rem)] whitespace-nowrap">
+            <span className="text-primary gold-text shimmer">Wednesday, 2 December 2026</span>
+          </p>
+
+          <a
+            className="hero__cta glass-plate"
+            href="#events"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("events")?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            <a className="hero__cta glass-plate" href="#events" style={{ marginTop: 0 }}>
-              <span className="gold-text shimmer">View Events</span>
-            </a>
-          </div>
+            <span className="gold-text shimmer">View events</span>
+          </a>
 
-          <div className="hero__scroll" aria-hidden="true">
-            <svg className="icon" viewBox="0 0 24 24">
+          <a
+            className="hero__scroll mt-auto mb-8 text-primary/50 cursor-pointer transition-opacity hover:opacity-100"
+            href="#invite"
+            aria-label="Scroll to invitation"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("invite")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <svg className="icon w-6 h-6" viewBox="0 0 24 24">
               <path d="m6 9 6 6 6-6" />
             </svg>
-          </div>
+          </a>
         </div>
       </section>
 
       {/* =====================================================================
           3. The Royal Invitation Card & Swaying Jhumar
           ===================================================================== */}
-      <section className="invite" aria-labelledby="invite-names">
-        <div className="invite__bg" aria-hidden="true">
+      <section className="invite relative overflow-hidden flex items-center justify-center min-h-screen py-36 px-3.5 md:py-24 bg-ivory" id="invite" aria-labelledby="invite-names">
+        <div className="invite__bg absolute inset-0 z-0" aria-hidden="true">
           <img
             src="/images/template-2/invite-bg.webp"
             width="941"
             height="1672"
             alt=""
             loading="lazy"
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -591,12 +602,14 @@ export default function WeddingPage() {
           loading="lazy"
         />
 
-        <div className="invite__card" data-reveal>
+        <div className="invite__card relative z-10 w-[min(27rem,94vw)] md:w-[28rem]" data-reveal>
           <div className="invite__frame" aria-hidden="true"></div>
 
-          <div className="invite__text">
-            <p className="invite__overline">With the blessings of the divine</p>
-            <p className="invite__kicker">
+          <div className="invite__text absolute inset-[calc(351/940*100cqi)_0_calc(184/940*100cqi)] flex flex-col items-center justify-center px-[17%] text-center">
+            <p className="invite__overline font-script italic text-rose mb-1.5 text-[clamp(0.75rem,3.6cqi,1rem)]">
+              With the blessings of the divine
+            </p>
+            <p className="invite__kicker font-script text-muted text-[clamp(0.75rem,3.4cqi,0.95rem)] leading-relaxed">
               we request the honour of your presence
               <br />
               at the wedding celebration of
@@ -612,17 +625,17 @@ export default function WeddingPage() {
               loading="lazy"
             />
 
-            <h2 className="invite__names" id="invite-names">
-              <span className="invite__person">
-                <span className="invite__name">Alankrita Tripathi</span>
-                <span className="invite__family">Daughter of Mrs. Anjana Tripathi &amp; Mr. Ajay Tripathi</span>
+            <h2 className="invite__names flex flex-col items-center" id="invite-names">
+              <span className="invite__person flex flex-col items-center">
+                <span className="invite__name font-script italic font-medium text-[10cqi] leading-tight text-primary">Alankrita</span>
+                <span className="invite__family font-script italic text-[clamp(0.72rem,3.3cqi,0.9rem)] leading-snug text-muted mt-1">Daughter of Mrs. Anjana &amp; Mr. Ajay Tripathi</span>
               </span>
-              <span className="invite__amp" aria-hidden="true">
-                &amp;
+              <span className="invite__amp font-script italic text-[6.5cqi] text-gold-deep my-[1.5cqi]" aria-hidden="true">
+                weds
               </span>
-              <span className="invite__person">
-                <span className="invite__name">Hemant Sharma</span>
-                <span className="invite__family">Son of Mrs. Alankritaa Sharma &amp; Mr. Sanjay Sharma</span>
+              <span className="invite__person flex flex-col items-center">
+                <span className="invite__name font-script italic font-medium text-[10cqi] leading-tight text-primary">Hemant</span>
+                <span className="invite__family font-script italic text-[clamp(0.72rem,3.3cqi,0.9rem)] leading-snug text-muted mt-1">Son of Mrs. Anuja &amp; Mr. Sanjay Sharma</span>
               </span>
             </h2>
 
@@ -636,23 +649,26 @@ export default function WeddingPage() {
               loading="lazy"
             />
 
-            <div className="invite__meta">
+            <div className="invite__meta w-full mt-3 p-3.5 bg-ivory/90 border border-gold/60 rounded-2xl shadow-lg flex flex-col items-center backdrop-blur-sm">
               <p className="invite__date">
-                2<sup>nd</sup> December 2026
+                <span>2<sup>nd</sup> December 2026</span>
               </p>
-              <p className="invite__time">12:00 PM Onwards</p>
-              <p className="invite__venue">Indralok Marriage Garden, Termiinal 2, jagatpura road, near airport Jaipur</p>
+              <p className="invite__time">
+                <span>12:00 PM Onwards</span>
+              </p>
+              <p className="invite__venue">
+                <span>Indralok Marriage Garden, Terminal 2, jagatpura road, near airport Jaipur</span>
+              </p>
               <a
-                className="map-link"
+                className="map-link inline-flex items-center gap-2 px-5 py-2 mt-3 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:scale-105"
                 href="https://maps.app.goo.gl/amVNorJKCCNc2epL7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0" />
-                  <circle cx="12" cy="10" r="3" />
+                <svg className="icon w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11" />
                 </svg>
-                View on map
+                <span>View on Google Maps</span>
               </a>
             </div>
           </div>
@@ -662,8 +678,8 @@ export default function WeddingPage() {
       {/* =====================================================================
           4. Chapter Two: The Ceremonies (3D Folding Hand-Fans)
           ===================================================================== */}
-      <section className="band band--events" id="events">
-        <div className="events__decor" aria-hidden="true">
+      <section className="band band--events relative overflow-hidden py-20 px-4 sm:px-6" id="events">
+        <div className="events__decor absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
           <img
             className="decor decor--jhoomer decor--jhoomer-l"
             src="/images/template-2/decor-jhoomer.webp"
@@ -726,17 +742,17 @@ export default function WeddingPage() {
           />
         </div>
 
-        <div className="wrap wrap--wide">
-          <div className="head">
-            <h2 className="head__title" data-reveal style={{ transitionDelay: ".08s" }}>
+        <div className="wrap wrap--wide relative mx-auto max-w-5xl">
+          <div className="head text-center">
+            <h2 className="head__title font-display text-3xl sm:text-4xl md:text-5xl text-primary font-normal" data-reveal style={{ transitionDelay: ".08s" }}>
               Our Events
             </h2>
-            <p className="head__note" data-reveal style={{ transitionDelay: ".16s" }}>
-              A celebration journey, in five ceremonies
+            <p className="head__note font-script italic text-lg sm:text-xl text-muted mt-3" data-reveal style={{ transitionDelay: ".16s" }}>
+              A celebration journey, in ceremonies
             </p>
           </div>
 
-          <div className="flourish" data-reveal="short">
+          <div className="flourish flex justify-center mt-6" data-reveal="short">
             <img
               src="/images/template-2/gold-flourish.webp"
               alt=""
@@ -744,6 +760,7 @@ export default function WeddingPage() {
               loading="lazy"
               width="888"
               height="124"
+              className="w-40 sm:w-52 h-auto opacity-80"
             />
           </div>
 
@@ -1408,7 +1425,7 @@ export default function WeddingPage() {
             <p className="farewell__signoff">
               With all our love
               <br />
-              Alankrita Tripathi &amp; Hemant Sharma
+              Alankrita &amp; Hemant
               <br />
               <span className="farewell__families">&amp; Our Families</span>
             </p>

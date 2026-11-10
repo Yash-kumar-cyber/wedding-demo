@@ -1,7 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* Watercolour palette - Tailwind CSS theme tokens */
+  --color-blush: oklch(90% 0.045 8);
+  --color-peach: oklch(90% 0.07 55);
+  --color-lavender: oklch(87% 0.05 300);
+  --color-cream: oklch(97.2% 0.017 85);
+  --color-ivory: oklch(98.5% 0.01 90);
+  --color-olive: oklch(48% 0.055 120);
+  --color-sage: oklch(75% 0.045 135);
+  --color-gold: oklch(79% 0.11 85);
+  --color-gold-deep: oklch(63% 0.11 78);
+  --color-sandstone: oklch(79% 0.06 70);
+  --color-skyblue: oklch(90% 0.035 240);
+  --color-rose: oklch(65% 0.16 5);
+
+  --color-primary: oklch(42% 0.06 40);
+  --color-on-primary: oklch(98.5% 0.01 90);
+  --color-muted: oklch(52% 0.03 60);
+  --color-foreground: oklch(32% 0.035 60);
+
+  /* Aliases for variables */
+  --blush: var(--color-blush);
+  --peach: var(--color-peach);
+  --lavender: var(--color-lavender);
+  --cream: var(--color-cream);
+  --ivory: var(--color-ivory);
+  --olive: var(--color-olive);
+  --sage: var(--color-sage);
+  --gold: var(--color-gold);
+  --gold-deep: var(--color-gold-deep);
+  --sandstone: var(--color-sandstone);
+  --skyblue: var(--color-skyblue);
+  --rose: var(--color-rose);
+  --primary: var(--color-primary);
+  --on-primary: var(--color-on-primary);
+  --muted: var(--color-muted);
+  --foreground: var(--color-foreground);
+
+  --gradient-gold: linear-gradient(100deg, var(--gold-deep) 0%, oklch(92% .09 92) 45%, var(--gold-deep) 100%);
+  --shadow-plate: 0 24px 60px -28px color-mix(in oklab, var(--gold-deep) 40%, transparent);
+
+  --font-display: "Marcellus", ui-serif, Georgia, serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-calligraphy: "Tangerine", "Cormorant Garamond", ui-serif, serif;
+  --font-numeral: "Cinzel", "Marcellus", ui-serif, serif;
+}
+
 /* ==========================================================================
-   Ever After Bloom — Anushka & Shivam
-   Colours, fonts and spacing all come from the custom properties below.
-   Everything after them is plain hand-written CSS, in page order.
+   Ever After Bloom — Wedding Theme (Tailwind CSS v4)
    ========================================================================== */
 
 :root {
@@ -38,6 +86,10 @@
    -------------------------------------------------------------------------- */
 
 *, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -504,13 +556,18 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero__cta {
-  margin-top: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(1.75rem, 5vh, 4.25rem);
   padding: .75rem 2rem;
   border-radius: 9999px;
   font-size: .7rem;
   font-weight: 600;
   letter-spacing: .32em;
   text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
   transition: transform .2s ease;
 }
 .hero__cta:hover  { transform: scale(1.04); }
