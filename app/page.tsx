@@ -822,7 +822,7 @@ export default function WeddingPage() {
                       <span className="event__date">
                         1<sup className="event__ord">st</sup> Dec 2026
                       </span>
-                      <span className="event__time">3:00 AM</span>
+                      <span className="event__time">3:00 PM</span>
                     </p>
                     <p className="event__venue">Hotel Nesta</p>
                     <p className="event__note">Sector-8,9, Pratap nagar, Jaipur</p>
