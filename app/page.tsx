@@ -855,7 +855,7 @@ export default function WeddingPage() {
                       alt="Shaadi"
                       loading="lazy"
                     />
-                    <h3 className="event__name">Shaadi</h3>
+                    <h3 className="event__name">Vivaah</h3>
                     <div className="event__rule" aria-hidden="true"></div>
                     <p className="event__when">
                       <span className="event__date">
